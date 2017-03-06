@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 顶部是一个title，加relativelayout -->
+
+    <RelativeLayout
+        android:id="@+id/id_ly_top"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title_bar" >
+
+        <!-- 将控件的上边缘和父控件的上边缘对齐 - - android:layout_alignParentTop="true" -->
+
+
+        <!-- 将控件置于父控件的中心位置  - - android:layout_centerInParent="true" -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="哆仔"
+            android:textColor="#ffffff"
+             android:id="@+id/tv_back"
+            android:textSize="20sp"
+             />
+    </RelativeLayout>
+
+    <!-- bottom -->
+
+    <RelativeLayout
+        android:id="@+id/id_ly_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_bar" >
+
+        <Button
+            android:id="@+id/id_send_msg"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/send_btn_bg"
+            android:text="发送" />
+
+        <!-- 42  发送文本按钮缺少背景，对比不明显，直接添加一个,怎么处理？ -->
+
+        <Button
+            android:id="@+id/iv_voice"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/voice"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/id_input_msg"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/id_send_msg"
+            android:layout_toRightOf="@id/iv_voice"
+            android:background="@drawable/login_edit_normal"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/id_listview_msgs"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/id_ly_bottom"
+        android:layout_below="@+id/id_ly_top"
+        android:divider="@null"
+        android:dividerHeight="5dp" >
+
+        <!-- divider 去掉分割item的划线 -->
+    </ListView>
+
+</RelativeLayout>
